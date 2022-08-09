@@ -23,9 +23,9 @@ main:
 	call	GetPhysicallyInstalledSystemMemory
 	add	rsp, 32			; Release shadow space
 
-	sub	rsp, 32			; Reserve shadow space
 	mov	rdx, [memory_size]	; Argument 2; Result of GetPhysicallyInstalledSystemMemory
-	lea	rcx, [msg_memory_size]  ; Argument 1; Format
+	lea	rcx, [msg_memory_size]  ; Argument 1; Format string
+	sub	rsp, 32			; Reserve shadow space
 	call	printf
 	add	rsp, 32			; Release shadow space
 
