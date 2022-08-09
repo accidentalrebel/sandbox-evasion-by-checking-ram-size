@@ -14,9 +14,8 @@ main:
 	push    rbp
 	mov     rbp, rsp
 
-	sub	rsp, 0x8	; Reserve space for memory_size local variable
 	xor	rax, rax	; Clear rax
-	mov	[rsp], rax	; Place rax to the stack
+	push	rax		; Push RAX to the stack
 	lea	rcx, [rsp]	; Argument 1; Load the memory location of memory_size to rcx
 
 	sub	rsp, 32		; Reserve shadow space
