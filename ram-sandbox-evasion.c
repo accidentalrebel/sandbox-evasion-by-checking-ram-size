@@ -16,5 +16,5 @@ int main(void)
   	statex.dwLength = sizeof (statex);
 
   	GlobalMemoryStatusEx (&statex);
-  	printf ("Memory size: %*I64d", 7, statex.ullTotalPhys/1024);
+  	printf ("Memory size: %lld\n", statex.ullTotalPhys/1024);
 }
